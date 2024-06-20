@@ -15,7 +15,7 @@ public class FutureManager {
     private static final Logger futureManagerLogger = LogManager.getLogger(FutureManager.class);
     private static final Logger serverLogger = LogManager.getLogger("server");
 
-    public static void addNewFixedThreadPoolFuture(Future<ConnectionManagerPool> future){
+    public static void addNewForkJoinPoolFuture(Future<ConnectionManagerPool> future){
         forkJoinPool.add(future);
     }
 
