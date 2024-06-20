@@ -33,7 +33,7 @@ public class ConnectionManager implements Runnable{
                 userRequest = (Request) clientReader.readObject();
                 connectionManagerLogger.info("Получен запрос с командой " + userRequest.getCommandName(), userRequest);
                 if (AccessManager.access(userRequest.getUser(), userRequest.getCommandName())) {
-                    FutureManager.addNewFixedThreadPoolFuture(forkJoinPool.submit(new RequestManager(commandManager, userRequest, clientWriter)));
+                    FutureManager.addNewForkJoinPoolFuture(forkJoinPool.submit(new RequestManager(commandManager, userRequest, clientWriter)));
                 } else {
                     connectionManagerLogger.info("Юзер не одобрен");
                     responseToUser = new Response("Неверный пользователь!");
