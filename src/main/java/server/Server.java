@@ -9,7 +9,6 @@ import common.tools.GettingProperty;
 import common.tools.TakingConsole;
 import server.collectionHandler.CollectionWriter;
 import server.managers.*;
-import server.senderAndGetter.*;
 import server.tools.InteractConsole;
 import server.collectionHandler.CollectionReader;
 
